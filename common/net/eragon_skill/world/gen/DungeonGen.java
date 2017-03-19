@@ -36,8 +36,8 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class DungeonGen{
 	
-	public static final String PILLAR = "dungeoniumPillar";
-	public static final String CASTLE = "dungeoniumCastle";
+	public static final String PILLAR = "dungeoniumpillar";
+	public static final String CASTLE = "dungeoniumcastle";
 	
 	public static ArrayList<BlockPos> dungeonCoords = new ArrayList<BlockPos>();
 	public static ArrayList<String> dungeonNames = new ArrayList<String>();
