@@ -28,9 +28,20 @@ public class ModWorldGen implements IWorldGenerator{
 		int Z = chunkZ * 16 + random.nextInt(16);
 		int Y = 255;
 		BlockPos pos = new BlockPos(X, Y, Z);
-		
-		(new WorldGenPillar()).generate(world, random, pos);
-		(new WorldGenCastle()).generate(world, random, pos);
-		
+		String randDungeon = DungeonGen.dungeonNames.get(random.nextInt(DungeonGen.dungeonNames.size()));
+		createDungeon(randDungeon, pos, world, random);
+	}
+	
+	private void createDungeon(String name, BlockPos pos, World world, Random random){
+		switch(name){
+		case DungeonGen.CASTLE:
+			(new WorldGenCastle()).generate(world, random, pos);
+			break;
+		case DungeonGen.PILLAR:
+			(new WorldGenPillar()).generate(world, random, pos);
+			break;
+		default:
+			break;	
+		}
 	}
 }

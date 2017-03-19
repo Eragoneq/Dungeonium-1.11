@@ -36,7 +36,11 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class DungeonGen{
 	
+	public static final String PILLAR = "dungeoniumPillar";
+	public static final String CASTLE = "dungeoniumCastle";
+	
 	public static ArrayList<BlockPos> dungeonCoords = new ArrayList<BlockPos>();
+	public static ArrayList<String> dungeonNames = new ArrayList<String>();
 	
 	public static void loadStructure(BlockPos pos, World world, String name, Mirror mir, Rotation rot) {
 		WorldServer worldserver = (WorldServer) world;
@@ -87,6 +91,12 @@ public class DungeonGen{
 		}else{
 			return true;
 		}
+		
+	}
+	
+	public static void registerNames(){
+		DungeonGen.dungeonNames.add(PILLAR);
+		DungeonGen.dungeonNames.add(CASTLE);
 	}
 }
 /*

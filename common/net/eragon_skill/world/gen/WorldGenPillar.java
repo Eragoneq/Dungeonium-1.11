@@ -12,9 +12,9 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenPillar extends WorldGenerator{
 
-	int[] size = {5, 9, 5};
-	Block[] allowedBlocks = {Blocks.GRASS, Blocks.SAND, Blocks.STAINED_HARDENED_CLAY, Blocks.STONE, Blocks.SANDSTONE, Blocks.DIRT};
-	String name = "dungeoniumPillar";
+	private int[] size = {5, 9, 5};
+	private Block[] allowedBlocks = {Blocks.GRASS, Blocks.SAND, Blocks.STAINED_HARDENED_CLAY, Blocks.STONE, Blocks.SANDSTONE, Blocks.DIRT};
+	public static String name = DungeonGen.PILLAR;
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {

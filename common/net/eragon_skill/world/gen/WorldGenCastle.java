@@ -17,9 +17,9 @@ import net.minecraft.world.gen.structure.StructureStart;
 
 public class WorldGenCastle extends WorldGenerator{
 
-	int[] size = {9, 7, 9};
-	Block[] allowedBlocks = {Blocks.GRASS, Blocks.SAND, Blocks.STAINED_HARDENED_CLAY, Blocks.STONE, Blocks.SANDSTONE, Blocks.DIRT};
-	String name = "dungeoniumCastle";
+	private int[] size = {9, 7, 9};
+	private Block[] allowedBlocks = {Blocks.GRASS, Blocks.SAND, Blocks.STAINED_HARDENED_CLAY, Blocks.STONE, Blocks.SANDSTONE, Blocks.DIRT};
+	public static String name = DungeonGen.CASTLE;
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {
