@@ -36,7 +36,7 @@ public class Main
 	public void init(FMLInitializationEvent e)
 	{
 		ModWorldGen gen = new ModWorldGen();
-		GameRegistry.registerWorldGenerator(gen, 5);
+		GameRegistry.registerWorldGenerator(gen, 10);
 		proxy.init(e);
 	}
 	
