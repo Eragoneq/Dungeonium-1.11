@@ -4,13 +4,17 @@ import java.util.Random;
 
 import org.apache.commons.lang3.ArrayUtils;
 
+import net.eragon_skill.loottables.ModLootTableList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.StructureStart;
@@ -29,9 +33,18 @@ public class WorldGenCastle extends WorldGenerator{
 		if(DungeonGen.checkTerrain(worldIn, pos, size, allowedBlocks, 0.99)){
 			DungeonGen.loadStructure(pos, worldIn, name, Mirror.NONE, Rotation.NONE);
 			DungeonGen.dungeonCoords.add(pos);
+			TileEntity tile = worldIn.getTileEntity(pos.add(5, 1, 8));
+			if(tile instanceof TileEntityChest){
+				((TileEntityChest) tile).setLootTable(ModLootTableList.CHEST_CASTLE, rand.nextLong());
+			}
+			tile = worldIn.getTileEntity(pos.add(5, 1, 0));
+			if(tile instanceof TileEntityChest){
+				((TileEntityChest) tile).setLootTable(ModLootTableList.CHEST_CASTLE, rand.nextLong());
+			}
 			return true;
 		}else{
 			return false;
 		}
 	}
 }
+	
