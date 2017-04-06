@@ -33,20 +33,14 @@ public class WorldGenCastle extends WorldGenerator{
 		if(DungeonGen.checkTerrain(worldIn, pos, size, allowedBlocks, 0.99)){
 			DungeonGen.loadStructure(pos, worldIn, name, Mirror.NONE, Rotation.NONE);
 			DungeonGen.dungeonCoords.add(pos);
-			/*
-			TileEntity tile = worldIn.getTileEntity(pos.add(5, 1, 7));
+			TileEntity tile = worldIn.getTileEntity(pos.add(2, 1, 4));
 			if(tile instanceof TileEntityChest){
-				((TileEntityChest) tile).setLootTable(ModLootTableList.CHEST_CASTLE, rand.nextLong());
-			}else{
-				System.out.println("No chest here");
+				((TileEntityChest) tile).setLootTable(ModLootTableList.MOD_CHEST_CASTLE, rand.nextLong());
 			}
-			tile = worldIn.getTileEntity(pos.add(5, 1, 2));
+			tile = worldIn.getTileEntity(pos.add(6, 1, 4));
 			if(tile instanceof TileEntityChest){
-				((TileEntityChest) tile).setLootTable(ModLootTableList.CHEST_CASTLE, rand.nextLong());
-			}else{
-				System.out.println("No chest here");
+				((TileEntityChest) tile).setLootTable(ModLootTableList.MOD_CHEST_CASTLE, rand.nextLong());
 			}
-			*/
 			return true;
 		}else{
 			return false;
