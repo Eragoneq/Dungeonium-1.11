@@ -2,8 +2,11 @@ package net.eragon_skill.world.gen;
 
 import java.util.Random;
 
+import net.eragon_skill.loottables.ModLootTableList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -24,6 +27,12 @@ public class WorldGenPillar extends WorldGenerator{
 		if(DungeonGen.checkTerrain(worldIn, pos, size, allowedBlocks, 0.95)){
 			DungeonGen.loadStructure(pos.add(0, 1, 0), worldIn, name, Mirror.NONE, Rotation.NONE);
 			DungeonGen.dungeonCoords.add(pos);
+			//TileEntity tile = worldIn.getTileEntity(pos.add(2, 1, 2));
+			worldIn.setBlockState(pos.add(0, 2, 0), Blocks.CHEST.getDefaultState());
+			TileEntity tile = worldIn.getTileEntity(pos.add(0, 2, 0));
+			if(tile instanceof TileEntityChest){
+				((TileEntityChest) tile).setLootTable(ModLootTableList.MOD_CHEST_PILLAR, rand.nextLong());
+			}
 			return true;
 		}else{
 			return false;
