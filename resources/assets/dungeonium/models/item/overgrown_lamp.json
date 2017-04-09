@@ -1,0 +1,6 @@
+{
+    "parent": "dungeonium:block/overgrown_lamp",
+    "textures": {
+        "layer0": "dungeonium:blocks/overgrown_lamp"
+    }
+}

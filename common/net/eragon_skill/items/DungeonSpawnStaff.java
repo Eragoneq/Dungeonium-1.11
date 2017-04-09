@@ -23,9 +23,8 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class DungeonSpawnStaff extends Item
+public class DungeonSpawnStaff extends ModItem
 {
-	String name = References.RESOURCE_PREFIX + Names.DUNGEON_SPAWN_STAFF;
 	/**
 	 * For now that's just a test item i'm using.
 	 * It has different functions in most of versions.
@@ -33,9 +32,9 @@ public class DungeonSpawnStaff extends Item
 	 * @author eragoneq
 	 */
 	public DungeonSpawnStaff() {
+		super(Names.DUNGEON_SPAWN_STAFF);
 		this.setCreativeTab(CreativeTabs.MISC);
 		this.setMaxStackSize(1);
-		this.setUnlocalizedName(name);
 	}
 
 	@Override
@@ -51,10 +50,5 @@ public class DungeonSpawnStaff extends Item
 			}
 		}
 		return super.onItemRightClick(worldIn, playerIn, handIn);
-	}
-	
-	@Override
-	public String getUnlocalizedName() {
-		return "item." + this.name;
 	}
 }

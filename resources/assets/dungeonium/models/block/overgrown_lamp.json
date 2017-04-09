@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "dungeonium:blocks/overgrown_lamp"
+    }
+}

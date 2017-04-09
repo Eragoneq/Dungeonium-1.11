@@ -14,24 +14,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static DungeonSpawnStaff dungeonSpawnStaff;
+	public static DungeonSpawnStaff dungeon_spawn_staff;
 	
 	public static void init()
 	{	
-		dungeonSpawnStaff = new DungeonSpawnStaff();
-		dungeonSpawnStaff.setRegistryName(new ResourceLocation(References.MOD_ID, Names.DUNGEON_SPAWN_STAFF));
-		GameRegistry.register(dungeonSpawnStaff);
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public static void initClient(ItemModelMesher mesher){
-		
-		registerBasicModel(mesher, dungeonSpawnStaff, Names.DUNGEON_SPAWN_STAFF);
-	}
-	
-	public static void registerBasicModel(ItemModelMesher mesher, Item item, String name){
-		ModelResourceLocation model = new ModelResourceLocation(References.MOD_ID + name + "inventory");
-		ModelLoader.registerItemVariants(item, model);
-		mesher.register(item, 0, model);
+		dungeon_spawn_staff = new DungeonSpawnStaff();
 	}
 }

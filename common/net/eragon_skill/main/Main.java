@@ -3,6 +3,7 @@ package net.eragon_skill.main;
 import java.util.Random;
 
 import net.eragon_skill.world.gen.ModWorldGen;
+import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -22,7 +23,7 @@ public class Main
 	@Instance(References.MOD_ID)
 	public static Main instance;
 	
-	@SidedProxy(modId = References.MOD_ID, clientSide = "net.eragon_skill.main.ClientProxy", serverSide = "net.eragon_skill.main.CommonProxy")
+	@SidedProxy(modId = References.MOD_ID, clientSide = References.CLIENT_PROXY, serverSide = References.COMMON_PROXY)
 	public static CommonProxy proxy;
 	
 	@EventHandler

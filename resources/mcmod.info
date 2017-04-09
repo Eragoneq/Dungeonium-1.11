@@ -1,0 +1,17 @@
+[
+{
+  "modid": "Dungeonium",
+  "name": "Dungeonium",
+  "description": "Dungeonium is a mod that adds some new dungeons to make your survival experience better and that wants to make your gameplay more interesting.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Eragon_Skill"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

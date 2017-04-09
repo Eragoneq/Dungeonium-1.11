@@ -1,5 +1,6 @@
 package net.eragon_skill.main;
 
+import net.eragon_skill.blocks.ModBlocks;
 import net.eragon_skill.items.ModItems;
 import net.eragon_skill.world.gen.DungeonGen;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,12 +11,12 @@ public class CommonProxy {
 	
 	public void preInit(FMLPreInitializationEvent e)
 	{
-		
+		ModItems.init();
+		ModBlocks.init();
 	}
 	
 	public void init(FMLInitializationEvent e)
 	{
-		ModItems.init();
 		DungeonGen.registerNames();
 		
 	}
