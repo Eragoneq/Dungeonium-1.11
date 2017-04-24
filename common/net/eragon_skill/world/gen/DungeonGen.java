@@ -61,19 +61,19 @@ public class DungeonGen{
 		}
 	}
 	
-	public static boolean checkTerrain(World world, BlockPos pos, int[] size, Block[] block, double integrity){
+	public static boolean checkTerrain(World world, BlockPos pos, int[] size, Block[] block, double integrity, boolean checkDistance){
 		
 		int block_count = size[0]*size[1]*size[2];
 		int block_integrity = block_count;
-		/*
-		if(!dungeonCoords.isEmpty()){
-			for(BlockPos dungeons : dungeonCoords){
-				if(dungeons.getDistance(pos.getX(), pos.getY(), pos.getZ())<300){
-					return false;
+		if(checkDistance){
+			if(!dungeonCoords.isEmpty()){
+				for(BlockPos dungeons : dungeonCoords){
+					if(dungeons.getDistance(pos.getX(), pos.getY(), pos.getZ())<300){
+						return false;
+					}
 				}
 			}
 		}
-		*/
 		for (int x = 0; x <= size[0]; ++x){
 			for (int z = 0; z <= size[2]; ++z){
 				for (int y = 0; y <= size[1]; ++y){
@@ -103,54 +103,3 @@ public class DungeonGen{
 		DungeonGen.dungeonNames.add(SEAHUT);
 	}
 }
-/*
-public DungeonGen(BlockPos pos, World world, String name, Mirror mir, Rotation rot, Integer[] size, EnumFacing face)
-{
-	this.name = name;
-	this.pos = pos;
-	this.world = world;
-	this.size = size;
-	switch(face){
-	case NORTH:
-		pos.add(-(size[0]+1), 0.0, -(Math.ceil(size[2]/2)));
-		break;
-	case EAST:
-		pos.add(-(Math.ceil(size[0]/2)), 0.0, 1.0);
-		break;
-	case SOUTH:
-		pos.add(1.0, 0.0, -(Math.ceil(size[2]/2)));
-		break;
-	case WEST:
-		pos.add(pos.add(-(Math.ceil(size[0]/2)), 0.0, -(size[2]+1)));
-		break;
-	default:
-		break;
-	}
-	loadStructure(pos, world, name, mir, rot);
-}
-
-public DungeonGen(BlockPos pos, World world, String name, Integer[] size, EnumFacing face)
-{
-	this.name = name;
-	this.pos = pos;
-	this.world = world;
-	this.size = size;
-	switch(face){
-	case WEST:
-		pos = pos.add(-(size[0]), 0.0, -(Math.ceil(size[2]/2)));
-		break;
-	case SOUTH:
-		pos = pos.add(-(Math.ceil(size[0]/2)), 0.0, 1.0);
-		break;
-	case EAST:
-		pos = pos.add(1.0, 0.0, -(Math.ceil(size[2]/2)));
-		break;
-	case NORTH:
-		pos = pos.add(-(Math.ceil(size[0]/2)), 0.0, -(size[2]));
-		break;
-	default:
-		break;	
-	}
-	loadStructure(pos, world, name, Mirror.NONE, Rotation.NONE);
-}
-*/

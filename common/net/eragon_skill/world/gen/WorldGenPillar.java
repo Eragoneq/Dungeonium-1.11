@@ -24,7 +24,7 @@ public class WorldGenPillar extends WorldGenerator{
 		while(worldIn.isAirBlock(pos) && pos.getY() > 2){
 			pos = pos.down();
 		}
-		if(DungeonGen.checkTerrain(worldIn, pos, size, allowedBlocks, 0.95)){
+		if(DungeonGen.checkTerrain(worldIn, pos, size, allowedBlocks, 0.95, true)){
 			DungeonGen.loadStructure(pos.add(0, 1, 0), worldIn, name, Mirror.NONE, Rotation.NONE);
 			DungeonGen.dungeonCoords.add(pos);
 			TileEntity tile = worldIn.getTileEntity(pos.add(2, 1, 2));
