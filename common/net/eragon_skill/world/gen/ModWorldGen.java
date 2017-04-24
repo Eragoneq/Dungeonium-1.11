@@ -34,11 +34,16 @@ public class ModWorldGen implements IWorldGenerator{
 	
 	private void createDungeon(String name, BlockPos pos, World world, Random random){
 		switch(name){
+		/*
 		case DungeonGen.CASTLE:
 			(new WorldGenCastle()).generate(world, random, pos);
 			break;
 		case DungeonGen.PILLAR:
 			(new WorldGenPillar()).generate(world, random, pos);
+			break;
+		*/
+		case DungeonGen.SEAHUT:
+			(new WorldGenSeahut()).generate(world, random, pos);
 			break;
 		default:
 			break;	

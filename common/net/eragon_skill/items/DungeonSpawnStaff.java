@@ -43,11 +43,15 @@ public class DungeonSpawnStaff extends ModItem
 		Random rand = new Random();
 		if(!worldIn.isRemote)
 		{
+			DungeonGen.loadStructure(playerIn.getPosition(), worldIn, "dungeoniumseahut", Mirror.NONE , Rotation.NONE);
+			/*
 			worldIn.setBlockState(playerIn.getPosition().north(), Blocks.CHEST.getDefaultState());
 			TileEntity tile = worldIn.getTileEntity(playerIn.getPosition().north());
 			if(tile instanceof TileEntityChest){
 				((TileEntityChest) tile).setLootTable(ModLootTableList.MOD_CHEST_CASTLE, rand.nextLong());
 			}
+			*/
+			
 		}
 		return super.onItemRightClick(worldIn, playerIn, handIn);
 	}
